@@ -10,6 +10,8 @@ TestRail-CBT integration is created to help our users easily upload their test r
 Both of these are native to python and should already be included in your python environment. If though you do not have these preinstalled you can install them with the package manager Pip.
 Using pip to install, go to your terminal and type: `pip install requests` or `pip install json`
 
+***
+
 ### Quickstart Guide
 Clone this repo and add `TestRails.py` to your working directory.
 
@@ -35,6 +37,8 @@ testrail_auth.add_result(test_id, status_id, comment = "Your comment here", vers
 | assigned_to | int | The ID of a user the test should be assigned to |
 
 *Status ids can be passed as integer or string: ex: 1, 2, 4, 5 or Passed, Blocked, Retest, Failed*
+
+***
 
 ### Getting needed information from Users, Projects, Runs or Tests
 If you need gather any IDs for users, tests, runs, or projects we have also included easy ways to obtain these.
