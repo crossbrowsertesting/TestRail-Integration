@@ -18,7 +18,7 @@ For authentication you will need to provide your `email` and `password` as well 
 testrail_auth = TestRail('cbtQA@crossbrowsertesting.com', 'password_here', 'testcbt.testrail.io')
 ```
 
-To add a result to a test you will call `add_result()` and provide the two required arguments: `test_id` and `status_id`. All other fields are optional and are set by keywords. Put this snippet of code at the end of your test cycle to mark wether your CBT test has passed or failed.
+To add a result to a test you will call `add_result()` and provide the two required arguments: `test_id` and `status_id`. All other fields are optional and are set by keywords. Put this snippet of code at the end of your test cycle to mark whether your CBT test has passed or failed.
 ```
 testrail_auth.add_result(test_id, status_id, comment = "Your comment here", version = "1.0.0")
 ```
@@ -34,7 +34,7 @@ testrail_auth.add_result(test_id, status_id, comment = "Your comment here", vers
 | defects | string | A comma-separated list of defects to link to the test result |
 | assigned_to | int | The ID of a user the test should be assigned to |
 
-*Status ids can be passed as integer or named: ex: 1, 2, 4, 5 or Passed, Blocked, Retest, Failed*
+*Status ids can be passed as integer or string: ex: 1, 2, 4, 5 or Passed, Blocked, Retest, Failed*
 
 ### Getting needed information from Users, Projects, Runs or Tests
 If you need gather any IDs for users, tests, runs, or projects we have also included easy ways to obtain these.
