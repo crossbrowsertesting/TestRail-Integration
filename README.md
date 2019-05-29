@@ -23,16 +23,25 @@ To add a result to a test you will call `add_result()` and provide the two requi
 testrail_auth.add_result(test_id, status_id, comment = "Your comment here", version = "1.0.0")
 ```
 
-A example of all the fields you can set are listed here:
-![TestRail Results fields](testrail_fields.png)
+**A example of all the fields you can set are listed here:**
 
-*Status codes can be passed as integer or named: ex: 1, 2, 4, 5 or Passed, Blocked, Retest, Failed*
+| Name | Type | Description |
+| ----------- | ----- | ---- |
+| status_id	 | int | The ID of the test status. |
+| comment | string | The comment / description for the test result |
+| version | string | The version or build you tested against |
+| elasped | timespan | 	The time it took to execute the test, e.g. "30s" or "1m 45s" |
+| defects | string | A comma-separated list of defects to link to the test result |
+| assigned_to | int | The ID of a user the test should be assigned to |
+
+*Status ids can be passed as integer or named: ex: 1, 2, 4, 5 or Passed, Blocked, Retest, Failed*
 
 ### Getting needed information from Users, Projects, Runs or Tests
 If you need gather any IDs for users, tests, runs, or projects we have also included easy ways to obtain these.
 
 **Find user by email account:** `testrail_auth.get_user_by_email(email)`
-Response:
+
+Response Content:
 ```
 {
 	"email": "alexis@example.com",
@@ -42,7 +51,8 @@ Response:
 }
 ```
 **Find all projects:** `testrail_auth.get_projects()`
-Response:
+
+Response Content:
 ```
 {
     "project_id": 1,
@@ -51,7 +61,8 @@ Response:
 }
 ```
 **Find all test runs in project:** `testrail_auth.get_all_runs(project_id)`
-Response:
+
+Response Content:
 ```
 {
     "run_id": 2,
@@ -61,7 +72,8 @@ Response:
 }
 ```
 **Find all tests in test run:** `testrail_auth.get_all_tests(run_id)`
-Response:
+
+Response Content:
 ```
 {
     "test_id": 4,
@@ -69,4 +81,3 @@ Response:
     "status": "Untested"
 }
 ```
-
